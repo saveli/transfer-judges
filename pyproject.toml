@@ -1,0 +1,24 @@
+[project]
+name = "transfer-judges"
+version = "1.0.0"
+description = "Cross-domain transfer of expert counseling-quality ratings: matrices to LODO predictions (CPU-only part)."
+requires-python = "==3.13.*"
+license = "MIT"
+# Exact versions of the environment that produced predictions.csv. scikit-learn must
+# stay < 1.6 (mord's OrdinalAT lacks __sklearn_tags__). The GPU/DB feature-and-judge
+# pipeline uses env/pipeline-requirements.txt.
+dependencies = [
+  "numpy==2.5.4",
+  "pandas==3.0.6",
+  "scipy==1.18.1",
+  "scikit-learn==1.5.2",
+  "mord==0.7",
+  "pyarrow==26.0.0",
+  "pyreadstat==1.3.6",
+  "openpyxl==3.1.5",
+  "joblib==1.6.0",
+  "threadpoolctl==3.7.0",
+]
+
+[tool.uv]
+package = false
